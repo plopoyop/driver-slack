@@ -433,6 +433,7 @@ class SlackDriver extends HttpDriver implements VerifiesService
 
     /**
      * Get bot userID.
+     * @return string
      */
     public function getBotUserId()
     {
@@ -445,6 +446,8 @@ class SlackDriver extends HttpDriver implements VerifiesService
             $this->botUserID = $botUserIdPayload->get('user_id');
             $this->getBotId();
         }
+
+        return $this->botUserID;
     }
 
     /**
